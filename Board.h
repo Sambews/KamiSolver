@@ -11,7 +11,7 @@ private:
 public:
 	Board();
 	~Board();
-	Board(Triangle* [29][10] arr);
+	Board(Triangle* (&arr)[29][10]);
 	
 	Triangle* getElement(int, int);
 	void setElement(Triangle*);
