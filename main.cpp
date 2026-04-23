@@ -1,7 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include "Triangle.h"
 #include "Board.h"
 #include "raylib.h"
+#include <string>
+using namespace std;
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -15,7 +18,33 @@ int main(void)
     const int screenHeight = 29 * SCALE;
 
     Board board;
-    
+  
+  string filename;
+	cin >> filename;
+	ifstream level(filename);
+
+	Triangle* levelBoard[29][10];
+	int parity = 1;
+	string colline;
+
+	for (int i = 0; i < 29; i++) { 
+		getline(level, colline);
+		for (int j = 0; j < 10; j++) {
+			string col = colline.substr(0, 1);
+			colline = colline.substr(2); //accounting for separator
+			int color = stoi(col);
+			levelBoard[i][j] = new Triangle(color, parity);
+			parity *= -1;
+		}
+	}
+
+	for (int i = 0; i < 29; i++) {
+		for (int j = 0; j < 10; j++) {
+			cout << levelBoard[i][j] << " ";
+		}
+		cout << endl;
+	}
+	Board board = Board(levelBoard);
     
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
@@ -52,5 +81,4 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     return 0;
-}
 

@@ -3,7 +3,7 @@
 class Triangle{
 private:
 	int color;
-	int orientation; //0 = pointing right, 1 = pointing left
+	int orientation; // 1 = pointing right, -1 = pointing left
 	int groupNum;
 	bool marked;
 public:

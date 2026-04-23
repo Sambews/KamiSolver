@@ -8,6 +8,14 @@ Board::Board(){
 	}
 }
 
+Board::Board(Triangle* (&arr)[29][10]) {
+    for(int i = 0; i < 29; i++){
+        for(int j = 0; j < 10; j++){
+            boardArr[i][j] = arr[i][j];
+        }
+    }
+}
+
 Board::~Board(){
 	for(int i = 0; i < 29; i++){
 		for(int j = 0; j < 10; j++){
@@ -20,7 +28,7 @@ Board::~Board(){
 void Board::makeGroups(){
 	//Unmark every triangle
 	for(int i = 0; i < 29; i++){
-		for(int j = 0; i < 10; j++){
+		for(int j = 0; j < 10; j++){
 			boardArr[i][j]->setMarked(false);
 		}
 	}
