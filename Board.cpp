@@ -8,6 +8,10 @@ Board::Board(){
 	}
 }
 
+Board::Board(Triangle* [29][10] arr) {
+	boardArr = arr;
+}
+
 Board::~Board(){
 	for(int i = 0; i < 29; i++){
 		for(int j = 0; j < 10; j++){
