@@ -1,0 +1,3 @@
+C:/Users/tonof/Documents/Code/Projects/KamiSolver/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate.dir
+C:/Users/tonof/Documents/Code/Projects/KamiSolver/build/_deps/raylib-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/tonof/Documents/Code/Projects/KamiSolver/build/_deps/raylib-subbuild/CMakeFiles/rebuild_cache.dir
